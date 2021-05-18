@@ -6,4 +6,4 @@ This repo contains:
 (Tadaptive_conv2.py, adaTrModule from adaptive_module.py)
 
 # If you want test it delete nn.Conv2d in you network and place adaModule instead.
-Use with caution adaModule is slow and very memory unfriendly to user module :( But it seems to work.
+Use with caution: adaModule is slow and very memory unfriendly to user module :( But it seems to work.
