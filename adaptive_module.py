@@ -4,7 +4,7 @@ import torch.nn as nn
 from torch import Tensor
 import numpy as np
 from Tadaptive_conv2 import adaTrConv2d
-from segnet import SegNet
+
 
 
 def weights_init_uniform_rule(m):
@@ -63,7 +63,7 @@ class adaTrModule(nn.Module):
         super(adaTrModule, self).__init__()
 
         self.conv = adaTrConv2d(in_channels, out_channels, kernel_size=kernel_size, dilation=dilation, padding=padding, stride=stride)
-        self.scales_conv = nn.Conv2d(in_channels, out_channels, 3)
+        self.scales_conv = nn.Conv2d(in_channels, 1, 3, padding=1)
         self.scales_conv.apply(weights_init_uniform_rule)
         self.scales_net = nn.Sequential(self.scales_conv,
                                         nn.ReLU())
